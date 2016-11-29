@@ -1197,6 +1197,7 @@ function open_year(evt, year) {
 </table>
 <script>
 function open_year(evt, year) {
+   ga('send', 'event', 'click_tag', 'click', 'click Campaign');
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
