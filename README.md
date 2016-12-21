@@ -1,2 +1,0 @@
-# testGA
-testGA session
