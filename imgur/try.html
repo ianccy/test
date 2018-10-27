@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="file" id="imageUpload" />
+  <img id="imagePreview">
+  <script>
+    document.querySelector('#imageUpload').addEventListener('change',handleFiles);
+    function handleFiles() {
+      var fileList = this.files;
+      console.log(fileList);
+      if (this.files[0]) {
+        upload(this.files[0]);
+        // const FR= new FileReader();
+        // FR.addEventListener("load", function(e) {
+        //   document.getElementById("imagePreview").src = e.target.result;
+        // }); 
+        // FR.readAsDataURL(this.files[0]);
+      }
+    }
+    function upload (data){
+      var form = new FormData();
+      form.append("image", data);
+
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://api.imgur.com/3/image",
+        "method": "POST",
+        "headers": {
+          "Authorization": "Client-ID 1c955d6c55bd599"
+        },
+        "processData": false,
+        "contentType": false,
+        "mimeType": "multipart/form-data",
+        "data": form
+      }
+
+      $.ajax(settings).done(function (response) {
+        var res = JSON.parse(response);
+        console.log(res.data.link);
+        document.getElementById("imagePreview").src = res.data.link;
+      });
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</body>
+</html>
