@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="file" id="imageUpload" />
+  <progress id="progress" style="display:none" value="0" max="100"></progress>
+  <img id="imagePreview" onload="hideProgress()">
+  <script>
+    document.getElementById('imageUpload').addEventListener('change',handleFiles);
+    function handleFiles() {
+      var fileList = this.files;
+      console.log(fileList);
+      if (this.files[0]) {
+        upload(this.files[0]);
+      }
+    }
+    function upload (data){
+      var form = new FormData();
+      form.append("image", data);
+
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://api.imgur.com/3/image",
+        "method": "POST",
+        "headers": {
+          "Authorization": "Client-ID 1c955d6c55bd599"
+        },
+        "processData": false,
+        "contentType": false,
+        "mimeType": "multipart/form-data",
+        "data": form,
+        "xhr": function() {
+            var myXhr = $.ajaxSettings.xhr();
+            if(myXhr.upload){
+                myXhr.upload.addEventListener('progress',progress, false);
+            }
+            return myXhr;
+        },
+      }
+
+      $.ajax(settings).done(function (response) {
+        var res = JSON.parse(response);
+        console.log(res.data.link);
+        document.getElementById("imagePreview").src = res.data.link;
+      });
+    }
+function progress(e){
+  if(e.lengthComputable){
+    var length = e.total;
+    var current = e.loaded;
+    var progress = document.getElementById('progress');
+
+    var percent = Math.floor((current * 100)/length);
+    progress.value = percent;
+    if (progress.style.display !== 'block'){
+      progress.style.display = 'block';
+    }
+  }
+ }
+ function hideProgress(){
+    document.getElementById('progress').style.display = 'none';
+ }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</body>
+</html>
