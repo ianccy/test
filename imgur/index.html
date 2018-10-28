@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Drag and Drop upload with imgur api</title>
   <style>
     #imageUpload {
       display:none;
@@ -14,16 +14,30 @@
       padding: 50px;
       text-align: center;
       cursor: pointer;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #progress {
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
     }
     #dragZone:hover {
       opacity: 0.5;
     }
     .center {
-      text-align: center;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      min-height: 500px;
     }
     img {
       max-width: 100%;
       height: auto;
+    }
+    footer {
+      text-align: center;
     }
   </style>
 </head>
@@ -36,6 +50,7 @@
   <div class="center">
     <img id="imagePreview" onload="hideProgress()">
   </div>
+  <footer><a href="https://ianchuu.com/2018/10/27/imgprogress/index.html">tutorial article</a></footer>
   <script>
     document.getElementById('imageUpload').addEventListener('change',handleFiles);
     function handleFiles() {
