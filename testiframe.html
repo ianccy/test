@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+        <script id="fe-plugin">
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            var host = ('https:' == document.location.protocol ? 'https://s3-ap-southeast-1.amazonaws.com/widget.feversocial.com' : 'http://s3-ap-southeast-1.amazonaws.com/widget.feversocial.com');
+            host = host + "/fever-sdk.js?domain=feversocial.com&promoid=125699&sponsorid=36030&ptype=works&scheme=0&width=1024&uri=events.worldfamily.com.tw&hasFrameBorder=1";
+            js.src = host;
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'fever-jssdk'));
+    </script>
+</body>
+</html>
