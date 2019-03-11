@@ -78,7 +78,7 @@
 			}, function(response) {
       console.log('Successful login for: ' + JSON.stringify(response));
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!' + '<br/><button onClick="logout();">Logout!</button>';
+        'Thanks for logging in, ' + response.name + ', email is'+ response.email +'!' + '<br/><button onClick="logout();">Logout!</button>';
     });
   }
  
