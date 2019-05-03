@@ -21,7 +21,7 @@
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id; js.setAttribute('lazy','true');
                 var host = ('https:' == document.location.protocol ? 'https://s3-ap-southeast-1.amazonaws.com/utility.fevercdn.com/test' : 'http://s3-ap-southeast-1.amazonaws.com/utility.fevercdn.com/test');
-        host = host + '/fever-sdk.js?domain=events.worldfamily.com.tw&promoid=59&sponsorid=11&ptype=works&scheme=0&width=1024&uri=events.worldfamily.com.tw&hasFrameBorder=1'
+        host = host + '/fever-sdk-dev.js?domain=events.worldfamily.com.tw&promoid=59&sponsorid=11&ptype=works&scheme=0&width=1024&uri=events.worldfamily.com.tw&hasFrameBorder=1'
                 js.src = host;
         fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'fever-jssdk'));
