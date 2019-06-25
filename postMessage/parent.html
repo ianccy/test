@@ -8,6 +8,7 @@
 </head>
 <body>
   <button id="btn">open window</button>
+  <div id="content">none</div>
   <script>
   var child = null;
   document.getElementById('btn').addEventListener('click',function(){
@@ -15,7 +16,7 @@
   });
   window.addEventListener('message',function(e){
     if (e.origin === window.location.origin) {
-      alert(e.data);
+      document.getElementById('content').innerHTML= e.data;
       child.postMessage('bye',window.location.origin);
     }
   })
