@@ -12,7 +12,9 @@
   <script>
   var child = null;
   document.getElementById('btn').addEventListener('click',function(){
-    child = window.open("https://test.iandays.com/postMessage/child.html", "test", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+    
+    child = window.open("https://codepen.io/chu1228/debug/YmKKJY", "test", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+    // child = window.open("https://test.iandays.com/postMessage/child.html", "test", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
   });
   window.addEventListener('message',function(e){
     if (e.origin === window.location.origin) {
