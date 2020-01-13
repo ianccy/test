@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="sdkVersion"></div>
+    <div id="isInClient"></div>
+    <div id="isLoggedIn"></div>
+    <div id="deviceOS"></div>
+    <div id="getAccessToken">getAccessToken</div>
+    <div id="accessTokenField"></div>
+    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <script>
+      /**
+       * Initialize LIFF
+       * @param {string} myLiffId The LIFF ID of the selected element
+       */
+      document
+        .getElementById("getAccessToken")
+        .addEventListener("click", function() {
+          if (!liff.isLoggedIn() && !liff.isInClient()) {
+            alert(
+              'To get an access token, you need to be logged in. Please tap the "login" button below and try again.'
+            );
+          } else {
+            const accessToken = liff.getAccessToken();
+            document.getElementById(
+              "accessTokenField"
+            ).textContent = accessToken;
+            toggleAccessToken();
+          }
+        });
+      function initializeLiff(myLiffId) {
+        liff
+          .init({
+            liffId: myLiffId
+          })
+          .then(() => {
+            // start to use LIFF's api
+            initializeApp();
+          })
+          .catch(err => {
+            document.getElementById("liffAppContent").classList.add("hidden");
+            document
+              .getElementById("liffInitErrorMessage")
+              .classList.remove("hidden");
+          });
+      }
+      function displayLiffData() {
+        document.getElementById(
+          "browserLanguage"
+        ).textContent = liff.getLanguage();
+        document.getElementById("sdkVersion").textContent = liff.getVersion();
+        document.getElementById("isInClient").textContent = liff.isInClient();
+        document.getElementById("isLoggedIn").textContent = liff.isLoggedIn();
+        document.getElementById("deviceOS").textContent = liff.getOS();
+      }
+    </script>
+  </body>
+</html>
