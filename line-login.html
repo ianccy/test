@@ -13,13 +13,26 @@
     <div id="deviceOS"></div>
     <div id="getAccessToken">getAccessToken</div>
     <div id="accessTokenField"></div>
-    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
       /**
        * Initialize LIFF
        * @param {string} myLiffId The LIFF ID of the selected element
        */
-      initializeLiff('1554828804-YW5xmJZB');
+      function appendScriptResource(url, callback) {
+        const script = document.createElement("script");
+        script.onload = function() {
+          //do stuff with the script
+          callback();
+        };
+        script.src = url;
+
+        document.head.appendChild(script);
+      }
+      appendScriptResource(
+        "https://static.line-scdn.net/liff/edge/2.1/sdk.js",
+        initializeLiff
+      );
+      initializeLiff("1554828804-YW5xmJZB");
       document
         .getElementById("getAccessToken")
         .addEventListener("click", function() {
@@ -42,9 +55,10 @@
           })
           .then(() => {
             // start to use LIFF's api
-            initializeApp();
+            alert(`liff`, liff.isInClient());
           })
           .catch(err => {
+            alert(err);
             document.getElementById("liffAppContent").classList.add("hidden");
             document
               .getElementById("liffInitErrorMessage")
