@@ -18,6 +18,8 @@
        * Initialize LIFF
        * @param {string} myLiffId The LIFF ID of the selected element
        */
+      window.history.pushState(null, null, "/profile/");
+
       function appendScriptResource(url, callback) {
         const script = document.createElement("script");
         script.onload = function() {
