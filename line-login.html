@@ -32,7 +32,6 @@
         "https://static.line-scdn.net/liff/edge/2.1/sdk.js",
         initializeLiff
       );
-      initializeLiff("1554828804-YW5xmJZB");
       document
         .getElementById("getAccessToken")
         .addEventListener("click", function() {
@@ -51,7 +50,7 @@
       function initializeLiff(myLiffId) {
         liff
           .init({
-            liffId: myLiffId
+            liffId: "1554828804-YW5xmJZB"
           })
           .then(() => {
             // start to use LIFF's api
