@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script src="https://wechatfe.github.io/vconsole/lib/vconsole.min.js?v=3.3.0"></script>
     <script>
         // 初始化vConsole
@@ -29,21 +30,7 @@
        * Initialize LIFF
        * @param {string} myLiffId The LIFF ID of the selected element
        */
-
-      function appendScriptResource(url, callback) {
-        const script = document.createElement("script");
-        script.onload = function() {
-          //do stuff with the script
-          callback();
-        };
-        script.src = url;
-
-        document.head.appendChild(script);
-      }
-      appendScriptResource(
-        "https://static.line-scdn.net/liff/edge/2.1/sdk.js",
-        initializeLiff
-      );
+      initializeLiff();
       document
         .getElementById("getAccessToken")
         .addEventListener("click", function() {
@@ -62,7 +49,7 @@
       function initializeLiff(myLiffId) {
         liff
           .init({
-            liffId: "1554828804-YW5xmJZB"
+            liffId: "1608309930-zGQK2676"
           })
           .then(() => {
             // start to use LIFF's api
