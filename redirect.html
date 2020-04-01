@@ -11,6 +11,7 @@
       document.cookie = "key=value; expires=Tue, 16 Dec 2020 11:31:56 GMT; path=/; domain=." + domainName;
       alert(document.cookie);
       const url = window.location.search.split('?redirect=')[1];
+      alert(document.url);
       window.location.href = url + '?redirect=done';
   </script>
 </body>
