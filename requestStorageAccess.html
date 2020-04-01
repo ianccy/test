@@ -10,6 +10,9 @@
       var domainName = 'test.iandays.com';
       document.cookie = "key=value; expires=Tue, 16 Dec 2020 11:31:56 GMT; path=/; domain=." + domainName;
       alert(document.cookie);
+      localStorage.setItem("mytime", Date.now());
+      var x = localStorage.getItem("mytime");
+      alert(x);
       
       function makeRequestWithUserGesture() {
           alert(document.cookie);
