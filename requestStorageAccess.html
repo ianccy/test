@@ -8,14 +8,14 @@
   <body>
     <script>
       var domainName = 'test.iandays.com';
-      document.cookie = "key=value; expires=Tue, 16 Dec 2019 11:31:56 GMT; path=/; domain=." + domainName;
+      document.cookie = "key=value; expires=Tue, 16 Dec 2020 11:31:56 GMT; path=/; domain=." + domainName;
       alert(document.cookie);
       function makeRequestWithUserGesture() {
         var promise = document.requestStorageAccess();
         promise.then(
           function() {
             var domainName = 'test.iandays.com';
-            document.cookie = "key=value; expires=Tue, 16 Dec 2019 11:31:56 GMT; path=/; domain=." + domainName;
+            document.cookie = "key=value; expires=Tue, 16 Dec 2020 11:31:56 GMT; path=/; domain=." + domainName;
             alert(document.cookie);
             // Storage access was granted.
             // Check whether the user is logged in.
