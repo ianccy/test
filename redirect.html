@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      var domainName = 'test.iandays.com';
+      document.cookie = "key=value; expires=Tue, 16 Dec 2020 11:31:56 GMT; path=/; domain=." + domainName;
+      alert(document.cookie);
+      const url = window.location.search.split('?redirect=')[1];
+      window.location.href = url + '?redirect=done';
+  </script>
+</body>
+</html>
