@@ -9,23 +9,11 @@
     <script>
       var domainName = 'test.iandays.com';
       document.cookie = "key=value; expires=Tue, 16 Dec 2020 11:31:56 GMT; path=/; domain=." + domainName;
-      var cookieEnabled = navigator.cookieEnabled;
-      alert(cookieEnabled);
+      alert(document.cookie);
+      
+      alert(navigator.cookieEnabled;)
       function makeRequestWithUserGesture() {
-        var promise = document.requestStorageAccess();
-        promise.then(
-          function() {
-            var domainName = 'test.iandays.com';
-            document.cookie = "key=value; expires=Tue, 16 Dec 2020 11:31:56 GMT; path=/; domain=." + domainName;
-            alert(document.cookie);
-            // Storage access was granted.
-            // Check whether the user is logged in.
-            // If not, do a popup to log the user in.
-          },
-          function() {
-            // Storage access was denied.
-          }
-        );
+          alert(document.cookie);
       }
     </script>
     <button onclick="makeRequestWithUserGesture()">Play video</button>
