@@ -234,7 +234,10 @@ button {
             });
     } else {
         myLiffId = defaultLiffId;
-        initializeLiffOrDie(myLiffId);
+        setTimeout(() => {
+          initializeLiffOrDie(myLiffId);
+        }, 1500);
+ 
     }
 };
 
