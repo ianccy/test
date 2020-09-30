@@ -1,2 +1,1 @@
-# testGA
-testGA session
+https://test.iandays.com/
