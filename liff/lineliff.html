@@ -219,7 +219,7 @@ button {
         <script>
         window.onload = function() {
     const useNodeJS = false;   // if you are not using a node server, set this value to false
-    const defaultLiffId = window.location.search.indexOf('disabled=true') > -1 && "1608309930-gEZPB4d4" ;   // change the default LIFF value if you are not using a node server
+    const defaultLiffId = "1608309930-gEZPB4d4" ;   // change the default LIFF value if you are not using a node server
 
     // DO NOT CHANGE THIS
     let myLiffId = "";
@@ -242,7 +242,9 @@ button {
     } else {
         myLiffId = defaultLiffId;
         setTimeout(() => {
+            if(window.location.search.indexOf('liff.state') > -1){
           initializeLiffOrDie(myLiffId);
+        }
         }, 1500);
  
     }
