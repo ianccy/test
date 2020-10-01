@@ -240,7 +240,7 @@ button {
                 document.getElementById("nodeLiffIdErrorMessage").classList.remove('hidden');
             });
     } else {
-        alert('init');
+        alert(window.location.href);
         myLiffId = defaultLiffId;
         setTimeout(() => {
           initializeLiffOrDie(myLiffId);
@@ -273,7 +273,7 @@ function initializeLiff(myLiffId) {
         })
         .then(() => {
             // start to use LIFF's api
-            initializeApp();
+//             initializeApp();
         })
         .catch((err) => {
             document.getElementById("liffAppContent").classList.add('hidden');
