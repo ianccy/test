@@ -78,13 +78,6 @@ button {
     </head>
     <body>
         <div id="liffAppContent">
-                            <a target="_blank" href="https://liff.line.me/1608309930-gEZPB4d4/liff/lineliff.html?enable_scroll=true&liff_id=1639163722-0Qoqpw69&parent=https%3A%2F%2Finfo.feversocial.com%2Ftw%2Fmodule-%25E5%25B9%25B8%25E9%2581%258B%25E5%25A4%25A7%25E8%25BC%25AA%25E7%259B%25A4-150&promoid=49&t=1601465423792">
-                    open liff _blank
-                </a>
-            -----
-                <a target="_self" href="https://liff.line.me/1608309930-gEZPB4d4/liff/lineliff.html?enable_scroll=true&liff_id=1639163722-0Qoqpw69&parent=https%3A%2F%2Finfo.feversocial.com%2Ftw%2Fmodule-%25E5%25B9%25B8%25E9%2581%258B%25E5%25A4%25A7%25E8%25BC%25AA%25E7%259B%25A4-150&promoid=49&t=1601465423792">
-                    open liff _self
-                </a>
             <!-- ACTION BUTTONS -->
             <div class="buttonGroup">
                 <div class="buttonRow">
@@ -219,10 +212,10 @@ button {
         <script>
         window.onload = function() {
     const useNodeJS = false;   // if you are not using a node server, set this value to false
-    const defaultLiffId = "1608309930-gEZPB4d4" ;   // change the default LIFF value if you are not using a node server
-            
+    const defaultLiffId = "";   // change the default LIFF value if you are not using a node server
+
     // DO NOT CHANGE THIS
-    let myLiffId = "";
+    let myLiffId = "1608309930-gEZPB4d4";
 
     // if node is used, fetch the environment variable and pass it to the LIFF method
     // otherwise, pass defaultLiffId
@@ -240,7 +233,6 @@ button {
                 document.getElementById("nodeLiffIdErrorMessage").classList.remove('hidden');
             });
     } else {
-        alert(window.location.href);
         myLiffId = defaultLiffId;
         setTimeout(() => {
           initializeLiffOrDie(myLiffId);
@@ -273,7 +265,7 @@ function initializeLiff(myLiffId) {
         })
         .then(() => {
             // start to use LIFF's api
-//             initializeApp();
+            initializeApp();
         })
         .catch((err) => {
             document.getElementById("liffAppContent").classList.add('hidden');
