@@ -8,7 +8,10 @@
   </head>
   <body>
     Hello
-    <iframe src="https://zines.cc/ian" frameborder="0" style="width: 100%; height: 900px;"
+    <iframe
+      src="https://zines.cc/ian"
+      frameborder="0"
+      style="width: 100%; height: 900px"
     ></iframe>
     <iframe
       src="https://cdn.rawgit.com/motyar/fullscreen/master/example.html"
@@ -19,6 +22,9 @@
       <div>
         <button class="button">Click me to fullscreen the iframe</button>
       </div>
+      <div>
+        <button class="buttons">Click me to fullscreen the iframe</button>
+      </div>
       <div class="info">
         You can check keydown event listener when the browser are in fullscreen
         and press F11 and ESC by console log on developer tools
@@ -27,7 +33,9 @@
     </div>
     <script>
       var button = document.querySelector("#container .button");
+      var buttons = document.querySelector("#container .buttons");
       button.addEventListener("click", fullscreen);
+      buttons.addEventListener("click", fullScreenDocument);
       // when you are in fullscreen, ESC and F11 may not be trigger by keydown listener.
       // so don't use it to detect exit fullscreen
       document.addEventListener("keydown", function (e) {
@@ -65,21 +73,36 @@
         }
       }
 
-      function fullscreenChange() {
-        if (
-          document.fullscreenEnabled ||
-          document.webkitIsFullScreen ||
-          document.mozFullScreen ||
-          document.msFullscreenElement
-        ) {
-          console.log("enter fullscreen");
-        } else {
-          console.log("exit fullscreen");
+      function fullScreenDocument(enable) {
+        if (enable) {
+          const docElem = document.documentElement;
+          if (docElem.requestFullscreen) {
+            docElem.requestFullscreen();
+          } else if (docElem.mozRequestFullScreen) {
+            /* Firefox */
+            docElem.mozRequestFullScreen();
+          } else if (docElem.webkitRequestFullscreen) {
+            /* Chrome, Safari and Opera */
+            docElem.webkitRequestFullscreen();
+          } else if (docElem.msRequestFullscreen) {
+            /* IE/Edge */
+            docElem.msRequestFullscreen();
+          }
+        } else if (!enable && document.fullscreen) {
+          const docs = document;
+          if (docs.exitFullscreen) {
+            docs.exitFullscreen();
+          } else if (docs.mozCancelFullScreen) {
+            /* Firefox */
+            docs.mozCancelFullScreen();
+          } else if (docs.webkitExitFullscreen) {
+            /* Chrome, Safari and Opera */
+            docs.webkitExitFullscreen();
+          } else if (docs.msExitFullscreen) {
+            /* IE/Edge */
+            docs.msExitFullscreen();
+          }
         }
-        // force to reload iframe once to prevent the iframe source didn't care about trying to resize the window
-        // comment this line and you will see
-        var iframe = document.querySelector("iframe");
-        iframe.src = iframe.src;
       }
     </script>
   </body>
