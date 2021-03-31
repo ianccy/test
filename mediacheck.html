@@ -8,10 +8,11 @@
   </head>
   <body>
     <div id="show"></div>
+    <div id="navgator">123123</div>
     <script>
-      const isInside = window.matchMedia("(max-width: 480px)").matches;
-      console.log(isInside);
+      const isInside = window.matchMedia("(max-width: 480px)").matches;;
       document.querySelector('#show').innerText = isInside;
+      document.querySelector('#navgator').innerText = navigator.userAgent;
     </script>
   </body>
 </html>
