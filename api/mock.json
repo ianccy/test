@@ -1,0 +1,37 @@
+{
+   "code":"ADM-AU0-S0",
+   "message":"success",
+   "data":{
+      "id":132123124,
+      "uuid":"213123231",
+      "name":"ian",
+      "subscribed":1,
+      "createdAt":"2020-10-27 07:12:26",
+      "updatedAt":"2021-01-26 03:36:56",
+      "ugcList":[
+         {
+            "avatar":"https://fakeimg.pl/32x32",
+            "title":"RRRRRRR",
+            "name":"國字",
+            "serialNo":123123,
+            "imgUrls":[
+               {
+                  "id":123,
+                  "imgUrl":"https://assets.fevercdn.com/feversocial/promotions/1373/6416_compress_20210521_1.jpeg"
+               }
+            ]
+         },
+         {
+            "avatar":"https://fakeimg.pl/250x100",
+            "title":"RRRRRRR",
+            "serialNo":123123,
+            "imgUrls":[
+               {
+                  "id":13,
+                  "imgUrl":"https://assets.fevercdn.com/feversocial/promotions/1373/6417_compress_20210521_1.jpeg"
+               }
+            ]
+         }
+      ]
+   }
+}
