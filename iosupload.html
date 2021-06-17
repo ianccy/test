@@ -13,13 +13,7 @@
     const content = document.getElementById('content');
     function handleFiles() {
       var fileList = this.files[0];
-      let str = '';
-      for (const [key, value] of Object.entries(fileList)) {
-        str += `${key}: ${value}`;
-      }
-      console.log(str);
-     debugger;
-      content.textContent = str;
+      content.textContent = `name: ${fileList.name} type: ${fileList.type} modify: ${fileList.lastModifiedDate}`;
     }
     </script>
 
