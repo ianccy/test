@@ -3,15 +3,21 @@
 <body>
 
 <p>Click on the "Choose File" button to upload a file:</p>
+ <p id="content"></p>
 
 
   <input type="file" id="imageUpload" name="filename">
 
   <script>
     document.getElementById('imageUpload').addEventListener('change',handleFiles);
+    const content = document.getElementById('content');
     function handleFiles() {
-      var fileList = this.files;
-      console.log(fileList);
+      var fileList = this.files[0];
+      let str = '';
+      for (const [key, value] of Object.entries(fileList)) {
+        str += `${key}: ${value}`;
+      }
+      content.textContent = str;
     }
     </script>
 
