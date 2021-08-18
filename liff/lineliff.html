@@ -225,9 +225,6 @@ button {
 
     // DO NOT CHANGE THIS
     let myLiffId = "1554828804-YW5xmJZB";
-        alert(liff.isLoggedIn());
-        alert(liff.isInClient());
-        alert(liff.getIDToken());
     // if node is used, fetch the environment variable and pass it to the LIFF method
     // otherwise, pass defaultLiffId
     if (useNodeJS) {
@@ -245,6 +242,7 @@ button {
             });
     } else {
         myLiffId = defaultLiffId;
+        alert(123);
         alert(liff.isLoggedIn());
         alert(liff.isInClient());
         alert(liff.getIDToken());
