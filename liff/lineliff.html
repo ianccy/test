@@ -392,6 +392,9 @@ function registerButtonHandlers() {
     });
     
     document.getElementById('getIdToken').addEventListener('click', function() {
+        alert(liff.isLoggedIn());
+        alert(liff.isInClient());
+        alert(liff.getIDToken());
         if (!liff.isLoggedIn() && !liff.isInClient()) {
             alert('To get an access token, you need to be logged in. Please tap the "login" button below and try again.');
         } else {
