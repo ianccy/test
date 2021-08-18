@@ -243,7 +243,9 @@ button {
             });
     } else {
         myLiffId = defaultLiffId;
-        initializeApp();
+        alert(liff.isLoggedIn());
+        alert(liff.isInClient());
+        alert(liff.getIDToken());
 //         setTimeout(() => {
 //             initializeLiffOrDie(myLiffId);
 //         }, 1500);
@@ -391,18 +393,6 @@ function registerButtonHandlers() {
         }
     });
     
-    document.getElementById('getIdToken').addEventListener('click', function() {
-        alert(liff.isLoggedIn());
-        alert(liff.isInClient());
-        alert(liff.getIDToken());
-        if (!liff.isLoggedIn() && !liff.isInClient()) {
-            alert('To get an access token, you need to be logged in. Please tap the "login" button below and try again.');
-        } else {
-            const idToken = liff.getIDToken();
-            document.getElementById('accessTokenField').textContent = 'idToken:'+ idToken;
-            toggleAccessToken();
-        }
-    });
 
     // get profile call
     document.getElementById('getProfileButton').addEventListener('click', function() {
