@@ -93,6 +93,7 @@ button {
                 </div>
                 <div class="buttonRow">
                     <button id="getAccessToken">Get Access Token</button>
+                    <button id="getIdToken">Get id Token</button>
                     <button id="getProfileButton">Get Profile</button>
                 </div>
                 <div class="buttonRow">
@@ -385,6 +386,16 @@ function registerButtonHandlers() {
         } else {
             const accessToken = liff.getAccessToken();
             document.getElementById('accessTokenField').textContent = accessToken;
+            toggleAccessToken();
+        }
+    });
+    
+    document.getElementById('getIdToken').addEventListener('click', function() {
+        if (!liff.isLoggedIn() && !liff.isInClient()) {
+            alert('To get an access token, you need to be logged in. Please tap the "login" button below and try again.');
+        } else {
+            const idToken = liff.getIDToken();
+            document.getElementById('accessTokenField').textContent = 'idToken:'+ idToken;
             toggleAccessToken();
         }
     });
