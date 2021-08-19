@@ -203,7 +203,7 @@ button {
         <!-- LIFF INIT ERROR -->
         <div id="liffInitErrorMessage" class="hidden">
             <p>Something went wrong with LIFF initialization.</p>
-            <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error occurs in the process of <code>liff.init()</code>.</p>
+            <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error occurs in the process of <code>liff.)</code>.</p>
         </div>
         <!-- NODE.JS LIFF ID ERROR -->
         <div id="nodeLiffIdErrorMessage" class="hidden">
@@ -235,6 +235,9 @@ button {
             });
     } else {
         myLiffId = defaultLiffId;
+        liff.ready.then(() => {
+          alert('liff ready before init');
+        })
         setTimeout(() => {
             console.log(window.location.href)
             initializeLiffOrDie(myLiffId);
@@ -266,6 +269,10 @@ function initializeLiff(myLiffId) {
             liffId: myLiffId
         })
         .then(() => {
+            liff.ready.then(() => {
+              alert('liff ready after init');
+            })
+            alert(liff.getAccessToken());
             // start to use LIFF's api
             initializeApp();
             console.log(window.location.href);
