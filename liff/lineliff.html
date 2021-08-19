@@ -274,6 +274,7 @@ function initializeLiff(myLiffId) {
         })
         .then(() => {
             alert(window.location.href);
+            alert(liff.getAccessToken());
             // start to use LIFF's api
             initializeApp();
             console.log(window.location.href);
