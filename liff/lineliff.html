@@ -219,6 +219,9 @@ button {
         </div>
         <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
         <script>
+window.addEventListener('locationchange', function(){
+    alert('location changed!');
+})
 window.addEventListener('popstate', (event) => {
  alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
 });
