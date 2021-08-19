@@ -267,11 +267,13 @@ function initializeLiffOrDie(myLiffId) {
 * @param {string} myLiffId The LIFF ID of the selected element
 */
 function initializeLiff(myLiffId) {
+    alert(window.location.href));
     liff
         .init({
             liffId: myLiffId
         })
         .then(() => {
+            alert(window.location.href));
             // start to use LIFF's api
             initializeApp();
             console.log(window.location.href);
