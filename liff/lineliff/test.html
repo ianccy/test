@@ -235,13 +235,14 @@ button {
             });
     } else {
         myLiffId = defaultLiffId;
+        console.log(liff);
         liff.ready.then(() => {
           alert('liff ready before init');
         })
-        setTimeout(() => {
-            console.log(window.location.href)
-            initializeLiffOrDie(myLiffId);
-        }, 1500);
+//         setTimeout(() => {
+//             console.log(window.location.href)
+//             initializeLiffOrDie(myLiffId);
+//         }, 1500);
  
     }
 };
