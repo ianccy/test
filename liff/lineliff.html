@@ -219,6 +219,12 @@ button {
         </div>
         <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
         <script>
+window.addEventListener('popstate', (event) => {
+ alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
+});
+ window.addEventListener("hashchange", function( event ) {
+   alert(`hashchange`, event.state);
+});
         window.onload = function() {
     const useNodeJS = false;   // if you are not using a node server, set this value to false
     const defaultLiffId = "1554828804-YW5xmJZB";   // change the default LIFF value if you are not using a node server
