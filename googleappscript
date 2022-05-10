@@ -1,0 +1,46 @@
+function doPost(e) {
+  var params = e.parameter;
+  var name = params.name;
+  var phone = params.phone;
+  var status = params.status;
+  var index = params.index;
+  var action = params.action;
+  
+  var SpreadSheet = SpreadsheetApp.openById("1JbXssixJaqTL_BMgnmOiMxLyAZm0jOkw173VdewqO9c");
+  var Sheet = SpreadSheet.getSheets()[0];
+  var data = '';
+  if (action === 'query') {
+    data = queryData(Sheet, name, phone);
+  } else if (action === 'delete'){
+    data = updateData(Sheet, name, phone, status, index);
+  }
+  return ContentService.createTextOutput(JSON.stringify(data))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+function queryData (Sheet, name, phone){
+  var LastRow = Sheet.getLastRow();
+  
+  var data = [];
+  
+  var listAll = Sheet.getSheetValues(1, 1, LastRow, 7);
+  
+  for(var i = 0;i < listAll.length; i++){
+    if(listAll[i].indexOf(phone) === 1 && listAll[i].indexOf(name) === 0){
+      data.push({data: listAll[i],index: i + 1 })
+    }
+  }
+  return data;
+}
+
+function updateData(Sheet, name, phone, status, index){
+  
+  var checkName = Sheet.getSheetValues(index, 1, 1, 1) == name;
+  var checkPhone = Sheet.getSheetValues(index, 2, 1, 1) == phone;
+  if(checkName && checkPhone){
+    Sheet.getRange(index, 7).setValue(0);
+  
+    return 'success';
+  }
+  return null;
+}
