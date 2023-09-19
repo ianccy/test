@@ -26,15 +26,15 @@
             this[expando] = value;
             // check cookie change
             let cookie = this[expando];
+                this.dispatchEvent(
+                  new CustomEvent("cookiechange", {
+                    detail: cookie,
+                  })
+                );
             if (cookie !== lastCookie) {
               try {
                 // dispatch cookie-change messages to other same-origin tabs/frames
                 let detail = { oldValue: lastCookie, newValue: cookie };
-                this.dispatchEvent(
-                  new CustomEvent("cookiechange", {
-                    detail: detail,
-                  })
-                );
                 channel.postMessage(detail);
               } finally {
                 lastCookie = cookie;
