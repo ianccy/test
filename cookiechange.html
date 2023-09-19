@@ -55,7 +55,7 @@
     </script>
     <script>
       document.addEventListener('cookiechange', ({detail: {oldValue, newValue}})=> {
-        alert(`Cookie changed from "${oldValue}" to "${newValue}"`);
+        document.write(`Cookie changed Old"${oldValue}"  ____________   NEW: "${newValue}"`);
       });
 
       document.cookie = 'a=1; Path=/';
