@@ -130,8 +130,6 @@
       document.addEventListener("cookiechange", ({ detail: { cookie } }) => {
         document.getElementById("test").textContent = `Cookie is: ${cookie}`;
       });
-
-      document.cookie = "a=1; Path=/";
       function changeCookie() {
         document.cookie = `a=${Math.random()}; Path=/`;
       }
