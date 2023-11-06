@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      !(function (b, e, f, g, a, c, d) {
+        b.fbq ||
+          ((a = b.fbq =
+            function () {
+              a.callMethod
+                ? a.callMethod.apply(a, arguments)
+                : a.queue.push(arguments);
+            }),
+          b._fbq || (b._fbq = a),
+          (a.push = a),
+          (a.loaded = !0),
+          (a.version = "2.0"),
+          (a.queue = []),
+          (c = e.createElement(f)),
+          (c.async = !0),
+          (c.src = g),
+          (d = e.getElementsByTagName(f)[0]),
+          d.parentNode.insertBefore(c, d));
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "1691365101598662");
+      fbq("track", "PageView");
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-K85KZ5XXDD"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-K85KZ5XXDD");
+    </script>
+    <script>
+      (function (g, t) {
+        var script = document.createElement("script");
+        (script.defer = !0),
+          (script.dataset.gaid = g),
+          (script.dataset.target = t),
+          (script.src = "https://tracking-library.8ndpoint.com/usermetrics-dev?qq.js"),
+          document.getElementsByTagName("head")[0].appendChild(script);
+      })("G-xxxxxxxxxxx", "bageltest");
+    </script>
+  </head>
+  <body>
+    hello i am iframe content!!
+  </body>
+</html>
