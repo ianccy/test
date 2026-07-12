@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>東京 9 晚住宿對決｜Levant × 三井花園上野 × Schole</title>
-<meta name="description" content="2026/10/22–10/31 東京住宿三選一比較：東武Levant東京（錦糸町）、三井花園飯店上野、Richmond Premier 東京 Schole（押上）">
+<title>東京 9 晚住宿對決｜2026.10.22–10.31</title>
+<meta name="description" content="2026/10/22–10/31 東京住宿五選一比較：東武Levant（錦糸町）、三井花園上野、Richmond Premier Schole（押上）、OMO5東京大塚、Candeo上野公園">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -13,8 +12,8 @@
 :root{
   --paper:#F7F6F1; --card:#FFFFFF; --ink:#1B1E26; --ink-2:#5A5E6A; --ink-3:#9A9DA8;
   --line:#E3E1D8; --line-strong:#C9C6BA;
-  --sobu:#F5A80C; --yamanote:#7BB828; --hanzomon:#8F76D6;
-  --sobu-deep:#7A5300; --yamanote-deep:#3A5C10; --hanzomon-deep:#4A3690;
+  --sobu:#F5A80C; --yamanote:#7BB828; --hanzomon:#8F76D6; --toden:#E85298; --keihin:#00A0D2;
+  --sobu-deep:#7A5300; --yamanote-deep:#3A5C10; --hanzomon-deep:#4A3690; --toden-deep:#96204F; --keihin-deep:#00546E;
   --direct:#0F6E56; --direct-bg:#E1F5EE; --transfer:#6B6A63; --transfer-bg:#EFEDE5;
   --win:#B8860B;
   --serif:'Noto Serif TC',serif; --sans:'Noto Sans TC',sans-serif; --mono:'IBM Plex Mono',monospace;
@@ -23,37 +22,40 @@
 html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.75;font-size:16px}
 a{color:inherit}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
 
 /* ---------- hero ---------- */
 header{padding:64px 0 40px;border-bottom:3px solid var(--ink)}
 .kicker{font-family:var(--mono);font-size:13px;letter-spacing:.14em;color:var(--ink-2);display:flex;gap:14px;flex-wrap:wrap;align-items:center}
 .kicker .dot{width:6px;height:6px;border-radius:50%;background:var(--ink);display:inline-block}
 h1{font-family:var(--serif);font-weight:900;font-size:clamp(30px,5.4vw,52px);line-height:1.25;margin:14px 0 10px}
-.sub{color:var(--ink-2);max-width:640px;font-size:15px}
+.sub{color:var(--ink-2);max-width:680px;font-size:15px}
 
 /* station signs */
-.signs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
+.signs{display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:12px;margin-top:32px}
 .sign{background:var(--card);border:1.5px solid var(--ink);border-radius:10px;overflow:hidden;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease;text-decoration:none;display:block}
 .sign:hover{transform:translateY(-3px);box-shadow:0 6px 0 var(--ink)}
 .sign:focus-visible{outline:3px solid var(--hanzomon);outline-offset:3px}
-.sign .bar{height:10px}
-.sign .body{padding:14px 16px 12px}
-.sign .st{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--ink-3);text-transform:uppercase}
-.sign .name{font-family:var(--serif);font-weight:900;font-size:19px;line-height:1.35;margin:2px 0 6px}
-.sign .meta{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink-2)}
-.badge{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;border:2.5px solid;font-family:var(--mono);font-weight:600;font-size:11px;background:#fff;flex:none}
+.sign .bar{height:9px}
+.sign .body{padding:12px 14px 11px}
+.sign .st{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--ink-3);text-transform:uppercase}
+.sign .name{font-family:var(--serif);font-weight:900;font-size:16.5px;line-height:1.35;margin:2px 0 6px}
+.sign .meta{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--ink-2)}
+.badge{display:inline-flex;align-items:center;justify-content:center;width:21px;height:21px;border-radius:50%;border:2.5px solid;font-family:var(--mono);font-weight:600;font-size:10.5px;background:#fff;flex:none}
 .h-levant .bar{background:var(--sobu)} .h-ueno .bar{background:var(--yamanote)} .h-schole .bar{background:var(--hanzomon)}
+.h-omo .bar{background:var(--toden)} .h-candeo .bar{background:var(--keihin)}
 .h-levant .badge{border-color:var(--sobu);color:var(--sobu-deep)}
 .h-ueno .badge{border-color:var(--yamanote);color:var(--yamanote-deep)}
 .h-schole .badge{border-color:var(--hanzomon);color:var(--hanzomon-deep)}
+.h-omo .badge{border-color:var(--toden);color:var(--toden-deep)}
+.h-candeo .badge{border-color:var(--keihin);color:var(--keihin-deep)}
 
 /* ---------- sections ---------- */
 section{padding:52px 0 8px}
 .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
 .sec-no{font-family:var(--mono);font-size:13px;color:var(--ink-3);letter-spacing:.1em}
 h2{font-family:var(--serif);font-weight:900;font-size:clamp(21px,3vw,27px)}
-.sec-note{color:var(--ink-2);font-size:14px;margin-bottom:22px;max-width:680px}
+.sec-note{color:var(--ink-2);font-size:14px;margin-bottom:22px;max-width:700px}
 
 /* ---------- picker ---------- */
 .picker{background:var(--card);border:1.5px solid var(--ink);border-radius:12px;padding:22px 22px 18px;margin-bottom:26px}
@@ -64,39 +66,46 @@ h2{font-family:var(--serif);font-weight:900;font-size:clamp(21px,3vw,27px)}
 .chip span{display:inline-block;border:1.5px solid var(--line-strong);border-radius:999px;padding:6px 16px;font-size:14px;color:var(--ink-2);background:var(--paper);transition:all .15s;user-select:none}
 .chip input:checked + span{border-color:var(--ink);background:var(--ink);color:#fff}
 .chip input:focus-visible + span{outline:3px solid var(--hanzomon);outline-offset:2px}
-.rank{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.rank{display:grid;grid-template-columns:repeat(auto-fit,minmax(172px,1fr));gap:12px;margin-top:18px}
 .rank-card{border:1.5px solid var(--line-strong);border-radius:10px;padding:12px 14px;background:var(--paper);transition:all .2s}
 .rank-card.first{border-color:var(--win);background:#FDF8EA;box-shadow:0 3px 0 var(--win)}
 .rank-card .pos{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
 .rank-card.first .pos{color:var(--win);font-weight:600}
-.rank-card .nm{font-weight:700;font-size:15px;line-height:1.4}
+.rank-card .nm{font-weight:700;font-size:14.5px;line-height:1.4}
 .rank-card .sc{font-family:var(--mono);font-size:13px;color:var(--ink-2)}
 
 /* ---------- comparison table ---------- */
 .tbl-scroll{overflow-x:auto;border:1.5px solid var(--ink);border-radius:12px;background:var(--card)}
-table{width:100%;border-collapse:collapse;min-width:720px;font-size:14.5px}
-th,td{padding:13px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
-thead th{background:var(--ink);color:#fff;font-weight:500;font-size:14px;position:sticky;top:0}
-thead th small{display:block;font-family:var(--mono);font-size:11px;opacity:.75;font-weight:400;letter-spacing:.06em}
+table{width:100%;border-collapse:collapse;min-width:980px;font-size:14px}
+th,td{padding:12px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--ink);color:#fff;font-weight:500;font-size:13.5px;position:sticky;top:0}
+thead th small{display:block;font-family:var(--mono);font-size:10.5px;opacity:.75;font-weight:400;letter-spacing:.05em}
 tbody tr:last-child td{border-bottom:none}
-tbody th{font-weight:700;background:var(--paper);white-space:nowrap;font-size:14px;width:118px}
-tbody th small{display:block;font-weight:400;color:var(--ink-3);font-size:12px}
+tbody th{font-weight:700;background:var(--paper);white-space:nowrap;font-size:13.5px;width:104px}
+tbody th small{display:block;font-weight:400;color:var(--ink-3);font-size:11.5px}
 td.hl{background:#FDF8EA}
-.pill{display:inline-block;border-radius:6px;padding:2px 9px;font-size:13px;white-space:nowrap;font-family:var(--mono)}
+.pill{display:inline-block;border-radius:6px;padding:2px 8px;font-size:12.5px;white-space:nowrap;font-family:var(--mono)}
 .pill.d{background:var(--direct-bg);color:var(--direct)}
 .pill.t{background:var(--transfer-bg);color:var(--transfer)}
 .mins{font-weight:600}
 .won{color:var(--win);font-weight:700}
-.stars{font-family:var(--mono);letter-spacing:2px;font-size:13px}
+.stars{font-family:var(--mono);letter-spacing:2px;font-size:12.5px}
 .stars b{color:var(--ink)} .stars i{color:var(--line-strong);font-style:normal}
-.cellnote{display:block;font-size:12.5px;color:var(--ink-2);margin-top:3px;line-height:1.55;white-space:normal}
+.cellnote{display:block;font-size:12px;color:var(--ink-2);margin-top:3px;line-height:1.55;white-space:normal}
 .legend{display:flex;gap:18px;font-size:12.5px;color:var(--ink-2);margin:12px 2px 0;flex-wrap:wrap}
 .legend .sw{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px;margin-right:6px}
 
+/* ---------- svg map ---------- */
+.mapfig{background:var(--card);border:1.5px solid var(--ink);border-radius:12px;padding:10px 10px 4px;overflow:hidden}
+.mapfig svg{width:100%;height:auto;display:block}
+.map-legend{display:flex;flex-wrap:wrap;gap:14px 20px;font-size:12.5px;color:var(--ink-2);padding:10px 12px 12px}
+.map-legend .hdot{display:inline-block;width:12px;height:12px;border-radius:50%;border:2.5px solid #fff;box-shadow:0 0 0 1.5px var(--ink);vertical-align:-2px;margin-right:6px}
+.map-legend .ddot{display:inline-block;width:11px;height:11px;border-radius:3px;background:var(--ink);vertical-align:-1px;margin-right:6px}
+
 /* ---------- pros/cons ---------- */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
 .pc{background:var(--card);border:1.5px solid var(--ink);border-radius:12px;overflow:hidden}
-.pc .head{padding:14px 18px 12px;border-bottom:1px solid var(--line)}
+.pc .head{padding:14px 18px 12px;border-bottom:1px solid var(--line);border-top:6px solid}
 .pc .head .nm{font-family:var(--serif);font-weight:900;font-size:17px}
 .pc .head .st2{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
 .pc ul{list-style:none;padding:14px 18px}
@@ -104,28 +113,17 @@ td.hl{background:#FDF8EA}
 .pc li.plus::before{content:"＋";position:absolute;left:0;color:var(--direct);font-weight:700}
 .pc li.minus{color:var(--ink-2)}
 .pc li.minus::before{content:"－";position:absolute;left:0;color:#A32D2D;font-weight:700}
-.pc .head{border-top:6px solid}
 .pc.h-levant .head{border-top-color:var(--sobu)}
 .pc.h-ueno .head{border-top-color:var(--yamanote)}
 .pc.h-schole .head{border-top-color:var(--hanzomon)}
-
-/* ---------- verdict ---------- */
-.verdict{background:var(--ink);color:#F3F1E9;border-radius:14px;padding:34px 32px;margin:40px 0 8px}
-.verdict h2{color:#fff}
-.verdict p{color:#CFCCC0;font-size:15px;max-width:760px;margin-top:10px}
-.verdict .rule{border:none;border-top:1px solid #3A3E4A;margin:20px 0}
-.verdict ol{padding-left:22px;font-size:15px}
-.verdict li{margin-bottom:8px}
-.verdict b{color:#fff}
-.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-.btn{display:inline-block;border:1.5px solid #F3F1E9;border-radius:999px;padding:9px 22px;font-size:14px;text-decoration:none;transition:all .15s}
-.btn:hover{background:#F3F1E9;color:var(--ink)}
+.pc.h-omo .head{border-top-color:var(--toden)}
+.pc.h-candeo .head{border-top-color:var(--keihin)}
 
 /* ---------- maps & poi ---------- */
-.geo{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.geo{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
 .geo-card{background:var(--card);border:1.5px solid var(--ink);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
-.geo-card .gmap{width:100%;height:210px;border:0;display:block;border-bottom:1px solid var(--line);filter:saturate(.92)}
-.geo-card .gtitle{padding:12px 16px 4px;font-family:var(--serif);font-weight:900;font-size:16px}
+.geo-card .gmap{width:100%;height:200px;border:0;display:block;border-bottom:1px solid var(--line);filter:saturate(.92)}
+.geo-card .gtitle{padding:0 0 4px 12px;margin:12px 16px 0;font-family:var(--serif);font-weight:900;font-size:16px;border-left:5px solid}
 .geo-card .gtitle small{display:block;font-family:var(--mono);font-weight:400;font-size:11.5px;color:var(--ink-3);letter-spacing:.1em}
 .geo-card ul{list-style:none;padding:8px 16px 14px;flex:1}
 .geo-card li{font-size:13.5px;padding:7px 0;border-bottom:1px dashed var(--line);display:flex;gap:9px;align-items:baseline}
@@ -136,10 +134,11 @@ td.hl{background:#FDF8EA}
 .geo-card li small{color:var(--ink-3);font-size:12px}
 .geo-card .openmap{margin:0 16px 16px;text-align:center;border:1.5px solid var(--ink);border-radius:999px;padding:7px 0;font-size:13.5px;text-decoration:none;transition:all .15s}
 .geo-card .openmap:hover{background:var(--ink);color:#fff}
-.geo-card.h-levant .gtitle{border-left:5px solid var(--sobu);}
-.geo-card.h-ueno .gtitle{border-left:5px solid var(--yamanote);}
-.geo-card.h-schole .gtitle{border-left:5px solid var(--hanzomon);}
-.geo-card .gtitle{padding-left:12px;margin:12px 16px 0;}
+.geo-card.h-levant .gtitle{border-color:var(--sobu)}
+.geo-card.h-ueno .gtitle{border-color:var(--yamanote)}
+.geo-card.h-schole .gtitle{border-color:var(--hanzomon)}
+.geo-card.h-omo .gtitle{border-color:var(--toden)}
+.geo-card.h-candeo .gtitle{border-color:var(--keihin)}
 
 /* ---------- weather ---------- */
 .wx{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
@@ -150,13 +149,24 @@ td.hl{background:#FDF8EA}
 .wx-note{background:var(--card);border:1.5px solid var(--ink);border-radius:12px;padding:18px 22px;font-size:14.5px}
 .wx-note b{font-weight:700}
 
+/* ---------- verdict ---------- */
+.verdict{background:var(--ink);color:#F3F1E9;border-radius:14px;padding:34px 32px;margin:40px 0 8px}
+.verdict h2{color:#fff}
+.verdict p{color:#CFCCC0;font-size:15px;max-width:780px;margin-top:10px}
+.verdict .rule{border:none;border-top:1px solid #3A3E4A;margin:20px 0}
+.verdict ol{padding-left:22px;font-size:15px}
+.verdict li{margin-bottom:8px}
+.verdict b{color:#fff}
+.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-block;border:1.5px solid #F3F1E9;border-radius:999px;padding:9px 20px;font-size:13.5px;text-decoration:none;transition:all .15s}
+.btn:hover{background:#F3F1E9;color:var(--ink)}
+
 footer{padding:34px 0 56px;color:var(--ink-3);font-size:12.5px;line-height:1.9}
 
 @media (max-width:760px){
-  .signs,.cards,.rank,.geo{grid-template-columns:1fr}
-  .wx{grid-template-columns:repeat(2,1fr)}
   header{padding:44px 0 30px}
   section{padding:40px 0 6px}
+  .wx{grid-template-columns:repeat(2,1fr)}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -168,32 +178,48 @@ footer{padding:34px 0 56px;color:var(--ink-3);font-size:12.5px;line-height:1.9}
 
 <header>
   <div class="wrap">
-    <div class="kicker">TOKYO 9 NIGHTS <span class="dot"></span> 2026.10.22 – 10.31 <span class="dot"></span> 2 名 1 室・禁菸・18 ㎡+</div>
-    <h1>東京住宿三選一：<br>錦糸町 × 上野 × 押上</h1>
+    <div class="kicker">TOKYO 9 NIGHTS <span class="dot"></span> 2026.10.22（四）IN – 10.31（六）OUT <span class="dot"></span> 2 名 1 室・禁菸・18 ㎡+</div>
+    <h1>東京住宿五選一：<br>錦糸町・上野・押上・大塚・鶯谷</h1>
     <p class="sub">行程：池袋 ×2 天、新宿、表參道、台場、橫濱、千葉動物公園。羽田進出。核心需求：宵夜、超市、投幣洗衣（外部可）。</p>
-    <nav class="signs" aria-label="三間候選飯店">
+    <nav class="signs" aria-label="五間候選飯店">
       <a class="sign h-levant" href="#compare">
         <div class="bar"></div>
         <div class="body">
-          <div class="st">KINSHICHO — 錦糸町</div>
+          <div class="st">KINSHICHO 錦糸町</div>
           <div class="name">東武 Levant 東京</div>
-          <div class="meta"><span class="badge">JB</span><span class="badge">JO</span>總武線各停・快速｜站步行 3 分</div>
+          <div class="meta"><span class="badge">JB</span>總武線｜站 3 分</div>
         </div>
       </a>
       <a class="sign h-ueno" href="#compare">
         <div class="bar"></div>
         <div class="body">
-          <div class="st">UENO — 上野</div>
+          <div class="st">UENO 上野</div>
           <div class="name">三井花園飯店 上野</div>
-          <div class="meta"><span class="badge">JY</span><span class="badge">G</span>山手線・銀座線｜站步行 2 分</div>
+          <div class="meta"><span class="badge">JY</span>山手線｜站 2 分</div>
         </div>
       </a>
       <a class="sign h-schole" href="#compare">
         <div class="bar"></div>
         <div class="body">
-          <div class="st">OSHIAGE — 押上</div>
-          <div class="name">Richmond Premier 東京 Schole</div>
-          <div class="meta"><span class="badge">Z</span><span class="badge">A</span>半藏門線・淺草線｜站步行 1 分</div>
+          <div class="st">OSHIAGE 押上</div>
+          <div class="name">Richmond Premier Schole</div>
+          <div class="meta"><span class="badge">Z</span>半藏門線｜站 1 分</div>
+        </div>
+      </a>
+      <a class="sign h-omo" href="#compare">
+        <div class="bar"></div>
+        <div class="body">
+          <div class="st">OTSUKA 大塚</div>
+          <div class="name">OMO5 東京大塚</div>
+          <div class="meta"><span class="badge">JY</span>山手線｜站 1 分</div>
+        </div>
+      </a>
+      <a class="sign h-candeo" href="#compare">
+        <div class="bar"></div>
+        <div class="body">
+          <div class="st">UGUISUDANI 鶯谷</div>
+          <div class="name">Candeo 上野公園</div>
+          <div class="meta"><span class="badge">JY</span>山手線｜站 3 分</div>
         </div>
       </a>
     </nav>
@@ -204,7 +230,7 @@ footer{padding:34px 0 56px;color:var(--ink-3);font-size:12.5px;line-height:1.9}
 
 <section id="picker-sec">
   <div class="sec-head"><span class="sec-no">01</span><h2>你最在乎什麼？</h2></div>
-  <p class="sec-note">勾選這趟旅程真正在乎的條件，排名會即時重算（各條件等權重，滿分 5 分取平均）。</p>
+  <p class="sec-note">勾選這趟旅程真正在乎的條件，排名會即時重算（各條件等權重，滿分 5 分取平均）。兩個人可以各勾一次，看答案一不一樣。</p>
   <div class="picker">
     <div class="q">我在乎——</div>
     <div class="chips" id="chips">
@@ -222,65 +248,83 @@ footer{padding:34px 0 56px;color:var(--ink-3);font-size:12.5px;line-height:1.9}
 
 <section id="compare">
   <div class="sec-head"><span class="sec-no">02</span><h2>總表對決</h2></div>
-  <p class="sec-note">★ 為本次條件下的相對評分；金色底＝該列勝者。價格為 2026 年中查得之兩人一晚參考帶，10 月下旬旺季請以訂房網即時價為準。</p>
+  <p class="sec-note">★ 為本次條件下的相對評分；金色底＝該列勝者。價格為 2026 年中查得之兩人一晚參考帶，10 月下旬旺季請以訂房網即時價為準。表格可左右滑動。</p>
   <div class="tbl-scroll">
   <table>
     <thead>
       <tr>
-        <th style="width:118px">項目</th>
-        <th>東武 Levant<small>KINSHICHO 錦糸町</small></th>
-        <th>三井花園 上野<small>UENO 上野</small></th>
-        <th>Schole<small>OSHIAGE 押上</small></th>
+        <th style="width:104px">項目</th>
+        <th>東武 Levant<small>錦糸町</small></th>
+        <th>三井花園 上野<small>上野</small></th>
+        <th>Schole<small>押上</small></th>
+        <th>OMO5 東京大塚<small>大塚</small></th>
+        <th>Candeo 上野公園<small>鶯谷</small></th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <th>車站距離</th>
-        <td>錦糸町站北口 3 分<span class="cellnote">JR 總武線各停＋快速、半藏門線</span></td>
-        <td>上野站 2 分<span class="cellnote">山手線、京濱東北、銀座線、日比谷線</span></td>
-        <td class="hl"><span class="won">押上站 B3 出口 1 分</span><span class="cellnote">半藏門線、淺草線、京成、東武 四線</span></td>
+        <td>錦糸町站北口 3 分<span class="cellnote">總武線各停＋快速、半藏門線</span></td>
+        <td>上野站 2 分<span class="cellnote">山手、京濱東北、銀座線、日比谷線</span></td>
+        <td class="hl"><span class="won">押上站 B3 出口 1 分</span><span class="cellnote">半藏門、淺草、京成、東武 四線</span></td>
+        <td class="hl"><span class="won">大塚站 1 分</span><span class="cellnote">山手線＋都電荒川線</span></td>
+        <td>鶯谷站 3 分<span class="cellnote">山手線、京濱東北（各停站）</span></td>
       </tr>
       <tr>
         <th>房型／面積</th>
         <td>雙床房約 21–24 ㎡<span class="cellnote">高樓晴空塔景・每日清掃</span></td>
         <td>雙人／雙床 18–25 ㎡<span class="cellnote">訂房時確認房型平米數</span></td>
         <td class="hl"><span class="won">20 ㎡ 級起・2023 開幕最新</span><span class="cellnote">全室禁菸・私人桑拿・浴室獨立</span></td>
+        <td>やぐら房 19 ㎡<span class="cellnote">榻榻米客廳＋上層床位（爬梯）・浴廁分離</span></td>
+        <td>18 ㎡ 起（依房型）<span class="cellnote">頂樓 Sky Spa 露天大浴場</span></td>
       </tr>
       <tr>
         <th>參考價<small>兩人／晚</small></th>
         <td>¥20,000–30,000</td>
         <td>¥18,000–28,000</td>
-        <td class="hl"><span class="won">¥16,000 起</span><span class="cellnote">退房 11:00 較寬鬆</span></td>
+        <td>¥16,000 起<span class="cellnote">退房 11:00 較寬鬆</span></td>
+        <td class="hl"><span class="won">¥17,193 起（實測最低）</span></td>
+        <td>¥20,000–28,000</td>
       </tr>
       <tr>
         <th>超市</th>
-        <td class="hl"><span class="stars"><b>★★★★★</b></span><span class="cellnote"><span class="won">隔壁 Arcakit 有 LIFE＋站區 24h 西友、24h Maruetsu 兩間</span></span></td>
-        <td><span class="stars"><b>★★★</b><i>★★</i></span><span class="cellnote">24h 唐吉軻德、吉池生鮮；無 24h 正規超市</span></td>
+        <td class="hl"><span class="stars"><b>★★★★★</b></span><span class="cellnote"><span class="won">LIFE 隔壁＋24h 西友＋24h Maruetsu</span></span></td>
+        <td><span class="stars"><b>★★★</b><i>★★</i></span><span class="cellnote">24h 唐吉軻德、吉池；無 24h 正規超市</span></td>
         <td><span class="stars"><b>★★★★</b><i>★</i></span><span class="cellnote">樓下就是 LIFE（非 24h）</span></td>
+        <td><span class="stars"><b>★★★</b><i>★★</i></span><span class="cellnote">站前商店街超市＋超商</span></td>
+        <td><span class="stars"><b>★★★</b><i>★★</i></span><span class="cellnote">借上野資源（一站）</span></td>
       </tr>
       <tr>
         <th>宵夜</th>
         <td><span class="stars"><b>★★★★</b><i>★</i></span><span class="cellnote">南口深夜居酒屋街</span></td>
-        <td class="hl"><span class="stars"><b>★★★★★</b></span><span class="cellnote"><span class="won">阿美橫整條深夜居酒屋＋24h 唐吉軻德</span></span></td>
-        <td><span class="stars"><b>★★</b><i>★★★</i></span><span class="cellnote">晴空塔一帶 21 時後安靜；半藏門線一站到錦糸町</span></td>
+        <td class="hl"><span class="stars"><b>★★★★★</b></span><span class="cellnote"><span class="won">阿美橫深夜居酒屋＋24h 唐吉軻德</span></span></td>
+        <td><span class="stars"><b>★★</b><i>★★★</i></span><span class="cellnote">21 時後安靜；一站到錦糸町</span></td>
+        <td><span class="stars"><b>★★★★</b><i>★</i></span><span class="cellnote">昭和感居酒屋橫丁・在地人為主</span></td>
+        <td><span class="stars"><b>★★★</b><i>★★</i></span><span class="cellnote">鶯谷本身安靜，宵夜去上野</span></td>
       </tr>
       <tr>
         <th>洗衣</th>
-        <td><span class="stars"><b>★★★★</b><i>★</i></span><span class="cellnote">步行 4 分 24h クリーンランドリー（4.2★）</span></td>
-        <td><span class="stars"><b>★★★</b><i>★★</i></span><span class="cellnote">靠外部店家；台東區密度全都第 3。館內有無洗衣房需確認</span></td>
+        <td><span class="stars"><b>★★★★</b><i>★</i></span><span class="cellnote">步行 4 分 24h クリーンランドリー</span></td>
+        <td><span class="stars"><b>★★★</b><i>★★</i></span><span class="cellnote">靠外部；台東區密度全都第 3</span></td>
         <td class="hl"><span class="stars"><b>★★★★★</b></span><span class="cellnote"><span class="won">6F 館內 12 台・24h</span>（僅電子支付）</span></td>
+        <td><span class="stars"><b>★★★★</b><i>★</i></span><span class="cellnote">豐島區＝洗衣店密度全都第 1</span></td>
+        <td><span class="stars"><b>★★★</b><i>★★</i></span><span class="cellnote">靠外部；台東區密度第 3</span></td>
       </tr>
       <tr>
         <th>醬油拉麵</th>
         <td><span class="cellnote" style="margin-top:0">満鶏軒（鴨醬油中華そば）</span></td>
-        <td class="hl"><span class="cellnote" style="margin-top:0"><span class="won">鴨 to 葱（御徒町）＋上野中華そば老鋪群</span></span></td>
+        <td class="hl"><span class="cellnote" style="margin-top:0"><span class="won">鴨 to 葱（御徒町）＋中華そば老鋪群</span></span></td>
         <td><span class="cellnote" style="margin-top:0">選擇少，多在錦糸町側解決</span></td>
+        <td><span class="cellnote" style="margin-top:0">站前有在地店；名店少</span></td>
+        <td><span class="cellnote" style="margin-top:0">借上野圈（一站）</span></td>
       </tr>
       <tr>
         <th>羽田進出</th>
         <td class="hl"><span class="won">利木津巴士直達飯店門口</span><span class="cellnote">或總武快速→品川轉京急</span></td>
-        <td>京急→品川轉山手／京濱東北<span class="cellnote">約 40 分・轉 1 次</span></td>
+        <td>京急→品川轉山手<span class="cellnote">約 40 分・轉 1 次</span></td>
         <td class="hl"><span class="won">淺草線直通京急・免轉車</span></td>
+        <td>約 50 分・轉 1–2 次</td>
+        <td>約 45 分・轉 1 次</td>
       </tr>
     </tbody>
   </table>
@@ -289,59 +333,75 @@ footer{padding:34px 0 56px;color:var(--ink-3);font-size:12.5px;line-height:1.9}
 
 <section id="transit">
   <div class="sec-head"><span class="sec-no">03</span><h2>行程交通（單程估計）</h2></div>
-  <p class="sec-note">池袋去 2 天所以權重加倍。千葉動物公園需在千葉站再轉單軌電車約 15 分（三間相同）。</p>
+  <p class="sec-note">池袋去 2 天所以權重加倍。千葉動物公園需在千葉站再轉單軌電車約 15 分（五間相同）。表格可左右滑動。</p>
   <div class="tbl-scroll">
   <table>
     <thead>
       <tr>
-        <th style="width:118px">目的地</th>
+        <th style="width:104px">目的地</th>
         <th>東武 Levant<small>錦糸町</small></th>
         <th>三井花園 上野<small>上野</small></th>
         <th>Schole<small>押上</small></th>
+        <th>OMO5<small>大塚</small></th>
+        <th>Candeo<small>鶯谷</small></th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <th>池袋<small>×2 天</small></th>
         <td><span class="pill t"><span class="mins">35 分</span>・轉 1</span></td>
-        <td class="hl"><span class="pill d"><span class="mins">17 分</span>・山手線直達</span></td>
+        <td><span class="pill d"><span class="mins">17 分</span>・直達</span></td>
         <td><span class="pill t"><span class="mins">40 分</span>・轉 1</span></td>
+        <td class="hl"><span class="pill d"><span class="mins">3 分</span>・山手線一站</span></td>
+        <td><span class="pill d"><span class="mins">14 分</span>・直達</span></td>
       </tr>
       <tr>
         <th>新宿</th>
-        <td><span class="pill d"><span class="mins">27 分</span>・總武線直達</span></td>
-        <td class="hl"><span class="pill d"><span class="mins">25 分</span>・山手線直達</span></td>
+        <td><span class="pill d"><span class="mins">27 分</span>・直達</span></td>
+        <td><span class="pill d"><span class="mins">25 分</span>・直達</span></td>
         <td><span class="pill t"><span class="mins">37 分</span>・轉 1</span></td>
+        <td class="hl"><span class="pill d"><span class="mins">11 分</span>・直達</span></td>
+        <td><span class="pill d"><span class="mins">23 分</span>・直達</span></td>
       </tr>
       <tr>
         <th>表參道</th>
-        <td><span class="pill d"><span class="mins">30 分</span>・半藏門線直達</span></td>
-        <td class="hl"><span class="pill d"><span class="mins">28 分</span>・銀座線直達</span></td>
-        <td><span class="pill d"><span class="mins">33 分</span>・半藏門線直達</span></td>
+        <td><span class="pill d"><span class="mins">30 分</span>・直達</span></td>
+        <td class="hl"><span class="pill d"><span class="mins">28 分</span>・直達</span></td>
+        <td><span class="pill d"><span class="mins">33 分</span>・直達</span></td>
+        <td><span class="pill t"><span class="mins">30 分</span>・轉 1</span></td>
+        <td><span class="pill t"><span class="mins">35 分</span>・轉 1</span></td>
       </tr>
       <tr>
         <th>台場</th>
         <td><span class="pill t"><span class="mins">45 分</span>・轉 2</span></td>
         <td><span class="pill t"><span class="mins">45 分</span>・轉 1</span></td>
         <td class="hl"><span class="pill t"><span class="mins">40 分</span>・轉 1</span></td>
+        <td class="hl"><span class="pill t"><span class="mins">40 分</span>・轉 1</span></td>
+        <td><span class="pill t"><span class="mins">50 分</span>・轉 1</span></td>
       </tr>
       <tr>
         <th>橫濱</th>
-        <td><span class="pill d"><span class="mins">38 分</span>・總武快速直達</span></td>
-        <td class="hl"><span class="pill d"><span class="mins">35 分</span>・上野東京線直達</span></td>
+        <td><span class="pill d"><span class="mins">38 分</span>・直達</span></td>
+        <td class="hl"><span class="pill d"><span class="mins">35 分</span>・直達</span></td>
         <td><span class="pill d"><span class="mins">48 分</span>・京急直通</span></td>
+        <td><span class="pill t"><span class="mins">40 分</span>・轉 1</span></td>
+        <td><span class="pill d"><span class="mins">45 分</span>・京濱東北直達</span></td>
       </tr>
       <tr>
         <th>千葉動物公園</th>
         <td class="hl"><span class="pill d"><span class="mins">32 分</span>・總武快速直達</span></td>
         <td><span class="pill t"><span class="mins">55 分</span>・轉 1</span></td>
         <td><span class="pill t"><span class="mins">42 分</span>・轉 1</span></td>
+        <td><span class="pill t"><span class="mins">65 分</span>・轉 1</span></td>
+        <td><span class="pill t"><span class="mins">55 分</span>・轉 1</span></td>
       </tr>
       <tr>
         <th>加權合計<small>池袋計 2 次</small></th>
         <td><span class="mins">242 分</span></td>
-        <td class="hl"><span class="mins won">222 分（最省）</span></td>
+        <td><span class="mins">222 分</span></td>
         <td><span class="mins">280 分</span></td>
+        <td class="hl"><span class="mins won">192 分（最省）</span></td>
+        <td><span class="mins">236 分</span></td>
       </tr>
     </tbody>
   </table>
@@ -353,8 +413,66 @@ footer{padding:34px 0 56px;color:var(--ink-3);font-size:12.5px;line-height:1.9}
   </div>
 </section>
 
+<section id="posmap">
+  <div class="sec-head"><span class="sec-no">04</span><h2>位置全圖</h2></div>
+  <p class="sec-note">示意地圖（非等比例）：一眼看出五間飯店與六個景點的相對位置。行程重心在西半邊（池袋 ×2、新宿、表參道），千葉在最東、橫濱在最南。</p>
+  <div class="mapfig">
+    <svg viewBox="0 0 920 640" role="img" aria-label="五間飯店與六個景點的相對位置示意圖">
+      <!-- bay -->
+      <path d="M420,640 C430,560 470,500 560,485 C650,470 730,500 800,470 L920,470 L920,640 Z" fill="#E3EDF1"/>
+      <text x="620" y="560" font-size="13" fill="#8FA6B0" font-style="italic">東 京 灣</text>
+
+      <!-- sobu line (yellow): shinjuku - kinshicho - chiba -->
+      <path d="M237,265 C340,232 470,244 583,272 C680,296 780,308 852,318" fill="none" stroke="#F5A80C" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+      <!-- hanzomon (purple): oshiage - kinshicho - omotesando -->
+      <path d="M625,213 L583,272 C480,330 360,362 262,370" fill="none" stroke="#8F76D6" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+      <!-- tokaido/keihin (blue): tokyo - shinagawa - yokohama -->
+      <path d="M478,300 C455,360 430,410 398,438 C365,470 335,525 322,580" fill="none" stroke="#00A0D2" stroke-width="5" stroke-linecap="round" opacity=".75"/>
+      <!-- rinkai/yurikamome (dashed): shinbashi area - odaiba -->
+      <path d="M455,345 C490,390 520,430 553,465" fill="none" stroke="#9A9DA8" stroke-width="4" stroke-dasharray="7 7" stroke-linecap="round"/>
+      <!-- yamanote loop (green) -->
+      <path d="M285,128 C330,105 400,118 440,148 C470,170 478,230 478,300 C478,360 445,415 398,438 C340,466 275,430 250,385 C228,345 232,300 237,265 C242,215 250,150 285,128 Z" fill="none" stroke="#7BB828" stroke-width="6" stroke-linecap="round"/>
+      <text x="330" y="300" font-size="12.5" fill="#7BB828" font-weight="700">山手線</text>
+      <text x="700" y="270" font-size="12" fill="#C08108">總武線 →千葉</text>
+      <text x="330" y="392" font-size="12" fill="#7A61C4">半藏門線</text>
+
+      <!-- destinations (dark squares) -->
+      <g font-size="13.5" font-weight="700" fill="#1B1E26">
+        <rect x="277" y="120" width="15" height="15" rx="3.5" fill="#1B1E26"/><text x="300" y="133">池袋 <tspan font-size="11.5" fill="#B8860B">×2天</tspan></text>
+        <rect x="229" y="257" width="15" height="15" rx="3.5" fill="#1B1E26"/><text x="176" y="270">新宿</text>
+        <rect x="254" y="362" width="15" height="15" rx="3.5" fill="#1B1E26"/><text x="184" y="375">表參道</text>
+        <rect x="546" y="458" width="15" height="15" rx="3.5" fill="#1B1E26"/><text x="570" y="471">台場</text>
+        <rect x="314" y="572" width="15" height="15" rx="3.5" fill="#1B1E26"/><text x="338" y="585">橫濱</text>
+        <rect x="845" y="310" width="15" height="15" rx="3.5" fill="#1B1E26"/><text x="838" y="345">千葉</text>
+      </g>
+
+      <!-- hotels (colored circles) -->
+      <g font-size="13" font-weight="700">
+        <circle cx="583" cy="272" r="10" fill="#F5A80C" stroke="#fff" stroke-width="3"/><circle cx="583" cy="272" r="12.5" fill="none" stroke="#1B1E26" stroke-width="1.5"/>
+        <text x="598" y="262" fill="#7A5300">Levant 錦糸町</text>
+        <circle cx="452" cy="172" r="10" fill="#7BB828" stroke="#fff" stroke-width="3"/><circle cx="452" cy="172" r="12.5" fill="none" stroke="#1B1E26" stroke-width="1.5"/>
+        <text x="468" y="186" fill="#3A5C10">三井花園 上野</text>
+        <circle cx="625" cy="213" r="10" fill="#8F76D6" stroke="#fff" stroke-width="3"/><circle cx="625" cy="213" r="12.5" fill="none" stroke="#1B1E26" stroke-width="1.5"/>
+        <text x="641" y="208" fill="#4A3690">Schole 押上</text>
+        <circle cx="348" cy="112" r="10" fill="#E85298" stroke="#fff" stroke-width="3"/><circle cx="348" cy="112" r="12.5" fill="none" stroke="#1B1E26" stroke-width="1.5"/>
+        <text x="364" y="102" fill="#96204F">OMO5 大塚</text>
+        <circle cx="432" cy="144" r="10" fill="#00A0D2" stroke="#fff" stroke-width="3"/><circle cx="432" cy="144" r="12.5" fill="none" stroke="#1B1E26" stroke-width="1.5"/>
+        <text x="448" y="136" fill="#00546E">Candeo 鶯谷</text>
+      </g>
+    </svg>
+    <div class="map-legend">
+      <span><span class="ddot"></span>景點（六處）</span>
+      <span><span class="hdot" style="background:#F5A80C"></span>Levant</span>
+      <span><span class="hdot" style="background:#7BB828"></span>三井花園上野</span>
+      <span><span class="hdot" style="background:#8F76D6"></span>Schole</span>
+      <span><span class="hdot" style="background:#E85298"></span>OMO5 大塚</span>
+      <span><span class="hdot" style="background:#00A0D2"></span>Candeo 鶯谷</span>
+    </div>
+  </div>
+</section>
+
 <section id="proscons">
-  <div class="sec-head"><span class="sec-no">04</span><h2>一句話優缺點</h2></div>
+  <div class="sec-head"><span class="sec-no">05</span><h2>一句話優缺點</h2></div>
   <p class="sec-note">＋ 是加分、－ 是要有心理準備的地方。</p>
   <div class="cards">
     <article class="pc h-levant">
@@ -363,38 +481,56 @@ footer{padding:34px 0 56px;color:var(--ink-3);font-size:12.5px;line-height:1.9}
         <li class="plus">超市火力全場最強：LIFE 隔壁＋兩間 24h 超市</li>
         <li class="plus">千葉、橫濱、新宿、表參道四項直達</li>
         <li class="plus">羽田利木津巴士停門口，行李無痛</li>
-        <li class="plus">大型飯店規格：每日清掃、高樓晴空塔景</li>
         <li class="minus">池袋要轉車 35 分，此行程去 2 天最吃虧</li>
         <li class="minus">屋齡較高，房間內裝偏傳統</li>
       </ul>
     </article>
     <article class="pc h-ueno">
-      <div class="head"><div class="nm">三井花園飯店 上野</div><div class="st2">此行程交通與宵夜之王</div></div>
+      <div class="head"><div class="nm">三井花園飯店 上野</div><div class="st2">均衡王・宵夜之王</div></div>
       <ul>
-        <li class="plus">池袋 17 分直達，六天四方向都順，加權總分最省</li>
-        <li class="plus">阿美橫深夜居酒屋街＋24h 唐吉軻德就在旁邊</li>
-        <li class="plus">鴨 to 葱等醬油拉麵名店在步行圈</li>
-        <li class="plus">飛羽田回程走京急—品川轉乘單純</li>
+        <li class="plus">六方向四項直達，交通、宵夜、拉麵全都前段班</li>
+        <li class="plus">阿美橫深夜居酒屋街＋24h 唐吉軻德在旁邊</li>
+        <li class="plus">鴨 to 葱等醬油拉麵名店步行圈</li>
         <li class="minus">沒有 24h 正規超市（靠唐吉軻德與超商補）</li>
-        <li class="minus">千葉那天 55 分最遠；館內洗衣房有無需再確認</li>
+        <li class="minus">千葉那天 55 分最遠；館內洗衣房有無需確認</li>
       </ul>
     </article>
     <article class="pc h-schole">
-      <div class="head"><div class="nm">Richmond Premier 東京 Schole</div><div class="st2">飯店本體最強</div></div>
+      <div class="head"><div class="nm">Richmond Premier Schole</div><div class="st2">飯店本體最強</div></div>
       <ul>
-        <li class="plus">館內 12 台洗衣機 24h——唯一達成「8 台以上」門檻</li>
-        <li class="plus">樓下就是 LIFE 超市，車站 1 分、四線交會</li>
-        <li class="plus">2023 開幕最新、全室禁菸、桑拿、退房 11:00</li>
-        <li class="plus">淺草線直通羽田免轉車，參考價三間最低</li>
+        <li class="plus">館內 12 台洗衣機 24h——唯一達成「8 台以上」</li>
+        <li class="plus">樓下 LIFE、站 1 分、淺草線直通羽田、桑拿</li>
+        <li class="plus">2023 開幕最新、全室禁菸、退房 11:00</li>
         <li class="minus">周邊 21 時後安靜，宵夜要一站到錦糸町</li>
-        <li class="minus">六個目的地有四個要轉車，交通總量墊底</li>
+        <li class="minus">六個目的地四個要轉車，交通總量偏多</li>
+      </ul>
+    </article>
+    <article class="pc h-omo">
+      <div class="head"><div class="nm">OMO5 東京大塚</div><div class="st2">此行程交通王・最低價</div></div>
+      <ul>
+        <li class="plus">池袋 3 分、新宿 11 分——加權交通全場最省（192 分）</li>
+        <li class="plus">參考價最低（¥17,193 起），星野系體驗活動多</li>
+        <li class="plus">豐島區＝投幣洗衣店密度全都第一</li>
+        <li class="plus">大塚昭和居酒屋街，在地感濃</li>
+        <li class="minus">やぐら房要爬小階梯上床位，接受度因人而異</li>
+        <li class="minus">千葉那天 65 分最遠；名店級拉麵少</li>
+      </ul>
+    </article>
+    <article class="pc h-candeo">
+      <div class="head"><div class="nm">Candeo Hotels 上野公園</div><div class="st2">每天泡湯回血</div></div>
+      <ul>
+        <li class="plus">頂樓 Sky Spa 露天大浴場——九晚天天泡</li>
+        <li class="plus">山手線直達池袋 14 分、上野資源一站可借</li>
+        <li class="plus">京濱東北直達橫濱</li>
+        <li class="minus">鶯谷站周邊環境較雜（旅館街），觀感因人而異</li>
+        <li class="minus">房型平米數不一，訂房要確認 18 ㎡ 以上</li>
       </ul>
     </article>
   </div>
 </section>
 
 <section id="geo">
-  <div class="sec-head"><span class="sec-no">05</span><h2>地圖與周邊口袋名單</h2></div>
+  <div class="sec-head"><span class="sec-no">06</span><h2>地圖與周邊口袋名單</h2></div>
   <p class="sec-note">每一筆都可以點開 Google Maps，出發後直接當導航清單用。</p>
   <div class="geo">
 
@@ -404,7 +540,6 @@ footer{padding:34px 0 56px;color:var(--ink-3);font-size:12.5px;line-height:1.9}
       <ul>
         <li><span class="tag">超市</span><a href="https://www.google.com/maps/search/?api=1&query=%E3%83%A9%E3%82%A4%E3%83%95%20%E3%82%A2%E3%83%AB%E3%82%AB%E3%82%AD%E3%83%83%E3%83%88%E9%8C%A6%E7%B3%B8%E7%94%BA" target="_blank" rel="noopener">LIFE（Arcakit 錦糸町）</a><small>隔壁・～23:00</small></li>
         <li><span class="tag">超市</span><a href="https://www.google.com/maps/search/?api=1&query=%E8%A5%BF%E5%8F%8B%20%E9%8C%A6%E7%B3%B8%E7%94%BA" target="_blank" rel="noopener">西友 錦糸町</a><small>24 小時</small></li>
-        <li><span class="tag">超市</span><a href="https://www.google.com/maps/search/?api=1&query=%E3%83%9E%E3%83%AB%E3%82%A8%E3%83%84%20%E9%8C%A6%E7%B3%B8%E7%94%BA" target="_blank" rel="noopener">Maruetsu 錦糸町</a><small>24 小時</small></li>
         <li><span class="tag">洗衣</span><a href="https://www.google.com/maps/search/?api=1&query=%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%83%A9%E3%83%B3%E3%83%89%E3%83%AA%E3%83%BC%E9%8C%A6%E7%B3%B8%E7%94%BA" target="_blank" rel="noopener">クリーンランドリー錦糸町</a><small>24h・步行約 4 分</small></li>
         <li><span class="tag">拉麵</span><a href="https://www.google.com/maps/search/?api=1&query=%E6%BA%80%E9%B6%8F%E8%BB%92%20%E9%8C%A6%E7%B3%B8%E7%94%BA" target="_blank" rel="noopener">満鶏軒</a><small>鴨醬油中華そば</small></li>
         <li><span class="tag">宵夜</span><a href="https://www.google.com/maps/search/?api=1&query=%E9%8C%A6%E7%B3%B8%E7%94%BA%E9%A7%85%E5%8D%97%E5%8F%A3%20%E5%B1%85%E9%85%92%E5%B1%8B" target="_blank" rel="noopener">南口居酒屋街</a><small>深夜營業密集</small></li>
@@ -437,11 +572,35 @@ footer{padding:34px 0 56px;color:var(--ink-3);font-size:12.5px;line-height:1.9}
       <a class="openmap" href="https://www.google.com/maps/search/?api=1&query=%E3%83%AA%E3%83%83%E3%83%81%E3%83%A2%E3%83%B3%E3%83%89%E3%83%9B%E3%83%86%E3%83%AB%E3%83%97%E3%83%AC%E3%83%9F%E3%82%A2%E6%9D%B1%E4%BA%AC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%AC" target="_blank" rel="noopener">在 Google Maps 開啟飯店</a>
     </article>
 
+    <article class="geo-card h-omo">
+      <iframe class="gmap" loading="lazy" title="OMO5 東京大塚 周邊地圖" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=OMO5%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%A1%9A&z=16&output=embed"></iframe>
+      <div class="gtitle">OMO5 東京大塚<small>OTSUKA 大塚</small></div>
+      <ul>
+        <li><span class="tag">宵夜</span><a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%A1%9A%E9%A7%85%20%E5%B1%85%E9%85%92%E5%B1%8B" target="_blank" rel="noopener">大塚站前居酒屋街</a><small>昭和感・在地人為主</small></li>
+        <li><span class="tag">超市</span><a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%A1%9A%E9%A7%85%20%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC" target="_blank" rel="noopener">站前超市（複數）</a><small>商店街內</small></li>
+        <li><span class="tag">洗衣</span><a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%A1%9A%20%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%A9%E3%83%B3%E3%83%89%E3%83%AA%E3%83%BC" target="_blank" rel="noopener">周邊投幣洗衣店</a><small>豐島區密度全都第 1</small></li>
+        <li><span class="tag">體驗</span><a href="https://www.google.com/maps/search/?api=1&query=%E9%83%BD%E9%9B%BB%E8%8D%92%E5%B7%9D%E7%B7%9A%20%E5%A4%A7%E5%A1%9A%E9%A7%85%E5%89%8D" target="_blank" rel="noopener">都電荒川線</a><small>東京僅存路面電車</small></li>
+      </ul>
+      <a class="openmap" href="https://www.google.com/maps/search/?api=1&query=OMO5%E6%9D%B1%E4%BA%AC%E5%A4%A7%E5%A1%9A" target="_blank" rel="noopener">在 Google Maps 開啟飯店</a>
+    </article>
+
+    <article class="geo-card h-candeo">
+      <iframe class="gmap" loading="lazy" title="Candeo Hotels 上野公園 周邊地圖" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=%E3%82%AB%E3%83%B3%E3%83%87%E3%82%AA%E3%83%9B%E3%83%86%E3%83%AB%E3%82%BA%E4%B8%8A%E9%87%8E%E5%85%AC%E5%9C%92&z=16&output=embed"></iframe>
+      <div class="gtitle">Candeo Hotels 上野公園<small>UGUISUDANI 鶯谷</small></div>
+      <ul>
+        <li><span class="tag">泡湯</span>頂樓 Sky Spa 露天大浴場<small>館內・住客免費</small></li>
+        <li><span class="tag">景點</span><a href="https://www.google.com/maps/search/?api=1&query=%E4%B8%8A%E9%87%8E%E6%81%A9%E8%B3%9C%E5%85%AC%E5%9C%92" target="_blank" rel="noopener">上野公園</a><small>步行圈・博物館群</small></li>
+        <li><span class="tag">宵夜</span><a href="https://www.google.com/maps/search/?api=1&query=%E3%82%A2%E3%83%A1%E6%A8%AA%20%E4%B8%8A%E9%87%8E" target="_blank" rel="noopener">阿美橫町（上野一站）</a><small>山手線 2 分</small></li>
+        <li><span class="tag">洗衣</span><a href="https://www.google.com/maps/search/?api=1&query=%E9%B6%AF%E8%B0%B7%20%E3%82%B3%E3%82%A4%E3%83%B3%E3%83%A9%E3%83%B3%E3%83%89%E3%83%AA%E3%83%BC" target="_blank" rel="noopener">周邊投幣洗衣店</a><small>台東區密度第 3</small></li>
+      </ul>
+      <a class="openmap" href="https://www.google.com/maps/search/?api=1&query=%E3%82%AB%E3%83%B3%E3%83%87%E3%82%AA%E3%83%9B%E3%83%86%E3%83%AB%E3%82%BA%E4%B8%8A%E9%87%8E%E5%85%AC%E5%9C%92" target="_blank" rel="noopener">在 Google Maps 開啟飯店</a>
+    </article>
+
   </div>
 </section>
 
 <section id="weather">
-  <div class="sec-head"><span class="sec-no">06</span><h2>10 月下旬東京天氣</h2></div>
+  <div class="sec-head"><span class="sec-no">07</span><h2>10 月下旬東京天氣</h2></div>
   <p class="sec-note">歷年 10 月下旬平均值，出發前一週再看即時預報。</p>
   <div class="wx">
     <div class="wx-card"><div class="lb">日間高溫</div><div class="v">18–20<small> °C</small></div></div>
@@ -450,7 +609,7 @@ footer{padding:34px 0 56px;color:var(--ink-3);font-size:12.5px;line-height:1.9}
     <div class="wx-card"><div class="lb">日落</div><div class="v">~16:50<small>（天黑得早）</small></div></div>
   </div>
   <div class="wx-note">
-    穿著建議：<b>長袖＋薄外套／薄針織</b>為主，早晚與夜間宵夜行程會涼，怕冷可加圍巾；白天走行程長袖單穿剛好。天黑早代表夜間活動時間長——宵夜與超市採買的需求會比夏天旅行更頻繁，這也是本次選宿把「宵夜・超市」放高權重的原因。房內每天洗衣的話，10 月濕度不高、外套類自然陰乾也快。
+    穿著建議：<b>長袖＋薄外套／薄針織</b>為主，早晚與夜間宵夜行程會涼，怕冷可加圍巾；白天走行程長袖單穿剛好。天黑早代表夜間活動時間長——宵夜與超市採買的需求會比夏天旅行更頻繁，這也是本次選宿把「宵夜・超市」放高權重的原因。10 月濕度不高，房內晾衣、外套自然陰乾都快。
   </div>
 </section>
 
@@ -459,14 +618,18 @@ footer{padding:34px 0 56px;color:var(--ink-3);font-size:12.5px;line-height:1.9}
   <p>照這份行程（池袋 ×2、西半邊佔四天）與「宵夜・超市・洗衣（可外部）」的需求：</p>
   <hr class="rule">
   <ol>
-    <li><b>三井花園上野</b>——交通加權總分最省、宵夜最強、醬油拉麵在門口，是預設答案。</li>
-    <li><b>東武 Levant</b>——如果「24 小時正規超市」是硬需求，或搭利木津巴士的行李便利對你很重要，選它。</li>
-    <li><b>Schole</b>——如果九晚總價比前兩間便宜 15–20% 以上，拿宵夜便利換最新的房間＋館內 12 台洗衣機，也是合理交易。</li>
+    <li><b>三井花園上野</b>——各項全前段班的均衡王，宵夜與醬油拉麵最強，預設答案。</li>
+    <li><b>OMO5 東京大塚</b>——交通加權最省（池袋 3 分）＋參考價最低，能接受やぐら房的爬梯床位就是超值黑馬。</li>
+    <li><b>東武 Levant</b>——「24 小時正規超市」是硬需求、或想要利木津巴士行李直達，選它。</li>
+    <li><b>Schole</b>——九晚總價便宜 15% 以上時，拿宵夜便利換最新房間＋館內 12 台洗衣機。</li>
+    <li><b>Candeo 鶯谷</b>——每天想泡露天大浴場的話的專屬選項。</li>
   </ol>
   <div class="links">
-    <a class="btn" href="https://www.tobuhotel.co.jp/levant/" target="_blank" rel="noopener">Levant 官網</a>
-    <a class="btn" href="https://www.gardenhotels.co.jp/ueno/" target="_blank" rel="noopener">三井花園上野 官網</a>
-    <a class="btn" href="https://richmondhotel.jp/tokyo-oshiage/" target="_blank" rel="noopener">Schole 官網</a>
+    <a class="btn" href="https://www.gardenhotels.co.jp/ueno/" target="_blank" rel="noopener">三井花園上野</a>
+    <a class="btn" href="https://hoshinoresorts.com/ja/hotels/omo5tokyootsuka/" target="_blank" rel="noopener">OMO5 大塚</a>
+    <a class="btn" href="https://www.tobuhotel.co.jp/levant/" target="_blank" rel="noopener">Levant</a>
+    <a class="btn" href="https://richmondhotel.jp/tokyo-oshiage/" target="_blank" rel="noopener">Schole</a>
+    <a class="btn" href="https://www.candeohotels.com/ja/tokyo-ueno/" target="_blank" rel="noopener">Candeo</a>
   </div>
 </div>
 
@@ -474,7 +637,7 @@ footer{padding:34px 0 56px;color:var(--ink-3);font-size:12.5px;line-height:1.9}
 
 <footer>
   <div class="wrap">
-    交通時間為車站到車站之單程估計（含約略轉乘步行），實際依班次而異。價格為 2026 年 7 月查得之參考帶，非即時報價；10/24（六）、10/25（日）、10/31（六）為週末夜，價格通常較高。訂房時請確認房型標示「禁煙／Non-smoking」與平米數。本頁為個人旅程比較用途。
+    入住 2026/10/22（四）～退房 10/31（六），共 9 晚；其中 10/23–24（五六）、10/30（五）為週末夜，房價通常較高。交通時間為車站到車站之單程估計（含約略轉乘步行），實際依班次而異。價格為 2026 年 7 月查得之參考帶，非即時報價。位置全圖為示意（非等比例）。訂房時請確認房型標示「禁煙／Non-smoking」與平米數（18 ㎡ 以上）。本頁為個人旅程比較用途。
   </div>
 </footer>
 
@@ -485,8 +648,12 @@ footer{padding:34px 0 56px;color:var(--ink-3);font-size:12.5px;line-height:1.9}
      s:{transit:4, night:4, market:5, laundry:4, room:3, price:3, haneda:5}},
     {id:'ueno', name:'三井花園飯店 上野', st:'上野',
      s:{transit:5, night:5, market:3, laundry:3, room:4, price:3, haneda:3}},
-    {id:'schole', name:'Richmond Premier 東京 Schole', st:'押上',
-     s:{transit:3, night:2, market:4, laundry:5, room:5, price:4, haneda:5}}
+    {id:'schole', name:'Richmond Premier Schole', st:'押上',
+     s:{transit:3, night:2, market:4, laundry:5, room:5, price:4, haneda:5}},
+    {id:'omo', name:'OMO5 東京大塚', st:'大塚',
+     s:{transit:5, night:4, market:3, laundry:4, room:4, price:5, haneda:2}},
+    {id:'candeo', name:'Candeo 上野公園', st:'鶯谷',
+     s:{transit:4, night:3, market:3, laundry:4, room:4, price:3, haneda:2}}
   ];
   var chipsEl=document.getElementById('chips');
   var rankEl=document.getElementById('rank');
