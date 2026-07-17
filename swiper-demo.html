@@ -1,99 +1,155 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Swiper demo</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
-    />
-    <!-- Link Swiper's CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css"
-    />
-
-    <!-- Demo styles -->
-    <style>
-      html,
-      body {
-        position: relative;
-        height: 100%;
-      }
-
-      body {
-        background: #000;
-        font-family:
-          Helvetica Neue,
-          Helvetica,
-          Arial,
-          sans-serif;
-        font-size: 14px;
-        color: #fff;
-        margin: 0;
-        padding: 0;
-      }
-
-      .swiper {
-        width: 100%;
-        height: 100%;
-      }
-
-      .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #444;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 4</div>
-        <div class="swiper-slide">Slide 5</div>
-        <div class="swiper-slide">Slide 6</div>
-        <div class="swiper-slide">Slide 7</div>
-        <div class="swiper-slide">Slide 8</div>
-        <div class="swiper-slide">Slide 9</div>
-      </div>
-      <div class="swiper-pagination"></div>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swiper dynamicMainBullets Demo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    body {
+      font-family: -apple-system, "PingFang TC", sans-serif;
+      margin: 0;
+      padding: 24px;
+      background: #f5f5f5;
+    }
+    .controls {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 16px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.1);
+      flex-wrap: wrap;
+    }
+    .control {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .control label {
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .control input[type="range"] {
+      width: 160px;
+    }
+    .control .value {
+      display: inline-block;
+      min-width: 28px;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+      font-weight: 700;
+      color: #1976d2;
+      background: #e3f2fd;
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+    .swiper {
+      width: 100%;
+      max-width: 640px;
+      height: 320px;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    }
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .hint {
+      max-width: 640px;
+      margin-top: 12px;
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <div class="control">
+      <label for="bullets">dynamicMainBullets</label>
+      <input id="bullets" type="range" min="1" max="10" value="5" />
+      <span class="value" id="bulletsValue">5</span>
     </div>
+    <div class="control">
+      <label for="slides">Slide 個數</label>
+      <input id="slides" type="range" min="1" max="30" value="9" />
+      <span class="value" id="slidesValue">9</span>
+    </div>
+    <div class="control">
+      <label for="loop">loop</label>
+      <input id="loop" type="checkbox" />
+    </div>
+  </div>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+  <div class="swiper">
+    <div class="swiper-wrapper" id="wrapper"></div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <p class="hint">拉動滑桿即時重建 Swiper。dynamicBullets 開啟,主要 bullet 數 = dynamicMainBullets。</p>
 
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper(".mySwiper", {
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const colors = ['#e57373','#64b5f6','#81c784','#ffb74d','#ba68c8',
+                    '#4db6ac','#f06292','#7986cb','#a1887f','#90a4ae'];
+    const bulletsInput = document.getElementById('bullets');
+    const slidesInput = document.getElementById('slides');
+    const bulletsValue = document.getElementById('bulletsValue');
+    const slidesValue = document.getElementById('slidesValue');
+    const loopInput = document.getElementById('loop');
+    const wrapper = document.getElementById('wrapper');
+    let swiper = null;
+
+    function buildSlides(count) {
+      wrapper.innerHTML = '';
+      for (let i = 1; i <= count; i++) {
+        const el = document.createElement('div');
+        el.className = 'swiper-slide';
+        el.textContent = 'Slide ' + i;
+        el.style.background = colors[(i - 1) % colors.length];
+        wrapper.appendChild(el);
+      }
+    }
+
+    function rebuild() {
+      const bullets = +bulletsInput.value;
+      const slides = +slidesInput.value;
+      bulletsValue.textContent = bullets;
+      slidesValue.textContent = slides;
+
+      const activeIndex = swiper ? Math.min(swiper.realIndex, slides - 1) : 0;
+      if (swiper) swiper.destroy(true, true);
+
+      buildSlides(slides);
+
+      swiper = new Swiper('.swiper', {
+        initialSlide: activeIndex,
+        loop: loopInput.checked,
         pagination: {
-          loop: true,
-          el: ".swiper-pagination",
+          el: '.swiper-pagination',
+          clickable: true,
           dynamicBullets: true,
-          dynamicMainBullets: 5, // Number of main bullets visible
+          dynamicMainBullets: bullets,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
       });
-    </script>
-    <script
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496"
-      integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ=="
-      data-cf-beacon='{"version":"2024.11.0","token":"ec9a6c21600d4161aa74e6a2c77efad2","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    }
+
+    bulletsInput.addEventListener('input', rebuild);
+    slidesInput.addEventListener('input', rebuild);
+    loopInput.addEventListener('change', rebuild);
+    rebuild();
+  </script>
+</body>
 </html>
